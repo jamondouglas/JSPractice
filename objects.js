@@ -16,6 +16,8 @@ function compareObj(obj1 , obj2){
 console.log('Are objs passed by reference ?', compareObj(origPerson, anotherPerson));
 
 //Object property descriptors
+// Create an object property descriptor with Object.defineProperty
+
 //Object descriptors are either data descriptors or accessor descriptors and 
 //  both are objects
 
@@ -47,4 +49,4 @@ console.log('Are objs passed by reference ?', compareObj(origPerson, anotherPers
 //  get
 //    A function which serves as a getter for the property, or undefined if there 
 //    is no getter. The function return will be used as the value of property.
-//Defaults to undefined.
+//    Defaults to undefined.
