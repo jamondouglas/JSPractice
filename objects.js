@@ -119,4 +119,10 @@ makeADJ.prototype = {
 
 var anotherDJ = new makeADJ();
 
+//Own and Inherited Properties
+//Verify if a property is defined on an object or inherited
+anotherDJ.hasOwnProperty('name');//prints false because the prop is inherited
+anotherDJ.name = 'Jamon';
+anotherDJ.hasOwnProperty('name')// true because obj has name prop on itself.
 
+//Serialize and Deserialize Objects
