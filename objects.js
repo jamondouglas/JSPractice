@@ -85,3 +85,38 @@ Object.defineProperty(o, 'a',{
     initVal = val;
   }
 });
+
+//CREATE OBJECTS
+
+//obj literal 
+//both methods of creating an object will inherit from Object __proto__ points to Object
+var obj = {};
+
+
+//obj constructor
+var anotherObj = new Object();
+
+
+//Constructor Pattern PsuedoClassical
+
+function makeDJ(name,style,residency){
+  this.name = name;
+  this.style = style;
+  this.residency = residency;
+}
+
+var dj = makeDJ('Jam The Man', 'Erraythang',true);
+
+//Prototype Pattern Prototypal
+function makeADJ(){
+}
+
+makeADJ.prototype = {
+  name      : 'Jam The Man',
+  style     : 'Erraythang',
+  residency : true
+};
+
+var anotherDJ = new makeADJ();
+
+
