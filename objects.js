@@ -21,6 +21,10 @@ console.log('Are objs passed by reference ?', compareObj(origPerson, anotherPers
 //Object descriptors are either data descriptors or accessor descriptors and 
 //  both are objects
 
+ // A data descriptor is a property that has a value, which may or may not be writable. 
+ // An accessor descriptor is a property described by a getter-setter pair of functions. 
+ // A descriptor must be one of these two flavors; it cannot be both.
+
 //Required keys for data and accessor descriptors: 
 //  configurable configurable
 //    true if and only if the type of this property descriptor may be changed 
@@ -65,3 +69,19 @@ function withValue(value) {
     value        : value || null
   };
 }
+
+Object.defineProperty (obj, 'key', withValue('static'));
+
+var o = {};
+//if creating an access descriptor you must provide a property by value for getter.
+// The value of the property returned by the getter is passed by reference.
+var initVal = 5;
+
+Object.defineProperty(o, 'a',{
+  get : function(){
+    return initVal;
+  },
+  set : function(val){
+    initVal = val;
+  }
+});
