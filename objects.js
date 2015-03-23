@@ -50,3 +50,18 @@ console.log('Are objs passed by reference ?', compareObj(origPerson, anotherPers
 //    A function which serves as a getter for the property, or undefined if there 
 //    is no getter. The function return will be used as the value of property.
 //    Defaults to undefined.
+
+var obj = { test : 1};
+Object.defineProperty(obj, 'key',{
+  configurable : false,
+  enumerable   : false,
+  value        : 'number'
+});
+
+function withValue(value) {
+  return {
+    enumerable   : false,
+    configurable : false,
+    value        : value || null
+  };
+}
