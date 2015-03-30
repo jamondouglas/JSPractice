@@ -1,0 +1,19 @@
+{
+  "name": "JSPractice",
+  "version": "1.0.0",
+  "description": "Javascript practice",
+  "main": "n",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamondouglas/JSPractice.git"
+  },
+  "author": "Jamon Douglas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamondouglas/JSPractice/issues"
+  },
+  "homepage": "https://github.com/jamondouglas/JSPractice"
+}
