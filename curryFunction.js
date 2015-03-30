@@ -1,3 +1,5 @@
+
+
 module.exports = function curryFunc(func, numOfArgs,argAccumalator){
 	numOfArgs = numOfArgs || func.length;
 	var argAccumalator = argAccumalator || [];
@@ -7,7 +9,7 @@ module.exports = function curryFunc(func, numOfArgs,argAccumalator){
 			return func.apply(null,argAccumalator.concat(Array.prototype.slice.call(arguments)));
 		}else if(arguments.length < numOfArgs ){
 			debugger;
-			argAccumalator = argAccumalator.concat(Array.prototype.slice.call(arguments,0,1));
+			argAccumalator = argAccumalator.concat(Array.prototype.slice.call(arguments,0,arguments.length));
 			return curryFunc(func,numOfArgs-arguments.length,argAccumalator);
 		}
 	};
