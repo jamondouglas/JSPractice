@@ -7,8 +7,8 @@ describe("Curry Function", function(){
 		expect(curryFunc).toEqual(jasmine.any(Function));
 	});
 
-	it('should know how many arguments a function takes',function(){
-		var addCurried = curryFunc(add);
-		expect(addCurried.getNumOfArgs()).toBe(2);
+	it('should return a function if curried func not provided number of args(function.length)', function(){
+		var addCurrFunc = curryFunc(add);
+		expect(addCurrFunc(5)).toEqual(jasmine.any(Function));
 	});
 });
