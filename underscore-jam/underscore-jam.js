@@ -26,11 +26,16 @@ _.each = function  each(obj, iteratee, context){
 _.map = function map(obj, iteratee, context){
 	var results = [];
 	
-	_.each(obj,iteratee, context);
+	_.each(obj,function(value,key,collection){
+		debugger;
+		return results.push(iteratee(value, key, collection));
+	}, context);
 	return results;
 };
 
+
+
 //HELPER FUNCTIONS
 //isArray
-
+function add1(x){x+1;}
 var testFunc = (function(){return function(x){console.log("Value of x is: "+x);};});
