@@ -1,6 +1,6 @@
 
-var curryFunc = require('../curryFunction');
-function add(x,y){return x+y;}
+var curryFunc = require('../ramda/curryFunction');
+function add(x,y,z){return z+x+y;}
 
 describe("Curry Function", function(){
 	it(' should return a function',function(){
