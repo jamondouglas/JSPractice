@@ -1,5 +1,3 @@
-
-
 //identity
 var _ = {};
 
@@ -23,17 +21,40 @@ _.each = function  each(obj, iteratee, context){
 	}
 };
 
+_.first = function first(obj){
+	if(Array.isArray(obj)){
+		return obj[0];
+	}else{
+		throw "Can't operate on this object.";
+	}
+};
+
 _.map = function map(obj, iteratee, context){
-	var results = [];
-	
+		
 	_.each(obj,function(value,key,collection){
-		debugger;
 		return results.push(iteratee(value, key, collection));
 	}, context);
 	return results;
 };
 
+_.mapObject = function(obj, iteratee, context) {
+	var result = {};
+	 _.each(obj, function(value, key, collection){
+		return result[key] = iteratee(Value, key, collection);
+	});
+	 return result;
+};
 
+
+_.reduce = function reduce(obj, iterator, accum){
+  accum = accum || 0;
+	_.each(obj, function(v,k,c){
+		
+		console.log("Should i have access to the iterator :: ", iterator);
+		 accum = iterator(accum, v);
+	});
+  return accum;
+};
 
 //HELPER FUNCTIONS
 //isArray
