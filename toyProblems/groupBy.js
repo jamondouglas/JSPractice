@@ -23,7 +23,16 @@
 
 Array.prototype.groupBy = function(func){
   var evalFunc  = func || function identity(elem){return elem;};
-  console.log(evalFunc)
+  var result = {};
+  this.map(function(elem){
+    if(result[evalFunc(elem)]){
+      result[evalFunc(elem)].push(elem);
+    } else {
+      result[evalFunc(elem)] = [elem];
+    }
+  });
+  return result;
+};
 
 };
 
